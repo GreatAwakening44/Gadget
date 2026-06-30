@@ -8,16 +8,16 @@ const MoCategories = () => {
 
 
     return (
-        <div className='min-h-screen bg-white px-4 sm:px-6 md:hidden'>
+        <div className='min-h-screen bg-white px-4 sm:px-6 md:hidden mt-3'>
             {categories.map((category) => (
                 <button
                 key={category}
                 onClick={() => setActive(category)}
-                className={`rounded-full py-1.5 px-5 text-sm font-medium transition-colors duration-200 
-                    cursor-pointer 
+                className={` py-2 px-5 text-sm font-medium transition-colors duration-200 
+                    cursor-pointer border-b-2
                     ${active === category
-                        ? 'bg-[#005124] text-white border border-[#005124]' 
-                        : 'bg-white text-black border border-black hover:bg-gray-50'}`
+                        ? 'border-red-600 text-red-600' 
+                        : 'border-transparent text-gray-500 hover:text-black'}`
                 }
                 >{category}</button>
 
