@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <>
       <header className="sticky top-0 z-30 bg-white border-b border-gray-100 ">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 h-16 flex items-center gap-8">
+        <div className="max-w-7xl mx-auto px-7 md:px-8 h-16 flex items-center gap-8">
 
           {/* ── Logo ── */}
           <Link to="/home" className="flex-shrink-0 z-20">
@@ -88,7 +88,7 @@ const Navbar = () => {
             <a href="/cart" className="relative text-gray-600 hover:text-[#6B0000]">
               <MdOutlineShoppingCart size={22} />
               <span className="absolute -top-1 -right-1.5 w-4 h-4 bg-[#6B0000] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                2
+                4
               </span>
             </a>
             <button

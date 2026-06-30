@@ -8,7 +8,7 @@ const MoCategories = () => {
 
 
     return (
-        <div className='min-h-screen bg-white px-6 md:hidden mt-3 
+        <div className='min-h-screen bg-white px-7 md:hidden mt-3 
         border-b border-gray-100 sticky top-16 z-20'>
             {categories.map((category) => (
                 <button
