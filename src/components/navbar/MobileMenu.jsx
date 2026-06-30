@@ -43,7 +43,13 @@ export default function MobileMenu({ isOpen, onClose }) {
           <a href="#" className="block py-2.5 text-sm font-semibold text-gray-700 hover:text-[#6B0000]">
             Help
           </a>
+        </nav>
 
+        <div className="px-5">
+            <span className="font-bold text-[#6B0000] text-lg">Categories</span>
+        </div>
+          
+        <nav>
           <hr className="my-3 border-gray-100" />
 
           {/* Laptops accordion */}
