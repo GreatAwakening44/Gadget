@@ -81,7 +81,7 @@ const Navbar = () => {
           </nav>
 
           {/* ── Mobile: right-side icons ── */}
-          <div className="flex md:hidden items-center gap-4 ml-auto">
+          <div className="flex md:hidden items-center gap-5 ml-auto">
             <button aria-label="Search" className="text-gray-600 hover:text-[#6B0000]">
               <FaSearch size={22} />
             </button>
@@ -96,7 +96,7 @@ const Navbar = () => {
               onClick={() => setMobileOpen(true)}
               className="text-gray-600 hover:text-[#6B0000]"
             >
-              <IoMdMenu size={23} />
+              <IoMdMenu size={25} />
             </button>
           </div>
 
