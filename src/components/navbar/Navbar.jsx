@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import goodg from '../../../src/assets/goodg.png';
+import { useCart } from "../shop/Cartcontext";
 
 
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -26,6 +27,7 @@ import MobileMenu from "./MobileMenu";
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { openMenu, openDropdown, scheduleClose, cancelClose, closeAll } = useDropdown();
+  const { itemCount } = useCart();
 
   return (
     <>
@@ -88,7 +90,7 @@ const Navbar = () => {
             <a href="/cart" className="relative text-gray-600 hover:text-[#6B0000]">
               <MdOutlineShoppingCart size={22} />
               <span className="absolute -top-1 -right-1.5 w-4 h-4 bg-[#6B0000] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                4
+                {itemCount}
               </span>
             </a>
             <button
