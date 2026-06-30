@@ -24,7 +24,7 @@ const DesktopNav = ({ openMenu, openDropdown, scheduleClose, cancelClose }) => {
     <div className="flex items-center gap-1">
       {/* Laptops */}
       <div className="relative" {...triggerProps("laptops")}>
-        <button className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-[#6B0000] hover:bg-red-50 rounded-lg transition-colors">
+        <button className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-[#6B0000] hover:bg-red-50 rounded-lg transition-colors">
           Laptops <FaChevronDown size={14} className={`transition-transform ${openMenu === "laptops" ? "rotate-180" : ""}`} />
         </button>
         {openMenu === "laptops" && (
@@ -34,7 +34,7 @@ const DesktopNav = ({ openMenu, openDropdown, scheduleClose, cancelClose }) => {
 
       {/* iPhones */}
       <div className="relative" {...triggerProps("phones")}>
-        <button className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-[#6B0000] hover:bg-red-50 rounded-lg transition-colors">
+        <button className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-[#6B0000] hover:bg-red-50 rounded-lg transition-colors">
           iPhones <FaChevronDown size={14} className={`transition-transform ${openMenu === "phones" ? "rotate-180" : ""}`} />
         </button>
         {openMenu === "phones" && (
