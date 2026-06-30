@@ -14,7 +14,7 @@ const MoCategories = () => {
                 <button
                 key={category}
                 onClick={() => setActive(category)}
-                className={` py-2 px-5 text-xl font-semibold transition-colors duration-600 
+                className={` py-2 px-5 text-base font-semibold transition-colors duration-600 
                     cursor-pointer border-b-2
                     ${active === category
                         ? 'border-[#5E0202] text-[#5E0202]' 
