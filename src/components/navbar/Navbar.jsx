@@ -77,7 +77,7 @@ const Navbar = () => {
               <MdOutlineShoppingCart size={18} />
               {/* Cart badge — swap count from your cart state */}
               <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-[#6B0000] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                4
+                {itemCount}
               </span>
             </a>
           </nav>

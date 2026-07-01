@@ -17,7 +17,7 @@ const ProductCard = ({ product, index = 0 }) => {
       className="bg-white border border-gray-200 rounded-2xl overflow-hidden
                  hover:border-gray-300 hover:shadow-sm transition-all duration-200 flex flex-col"
     >
-      <div className="w-full aspect-square bg-gray-100 overflow-hidden">
+      <div className="w-full h-36 md:h-48 sm:aspect-square bg-gray-100 overflow-hidden">
         <img
           src={product.image}
           alt={product.name}
