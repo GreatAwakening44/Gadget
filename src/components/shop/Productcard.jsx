@@ -27,14 +27,14 @@ const ProductCard = ({ product, index = 0 }) => {
       </div>
 
       <div className="p-4 flex flex-col gap-2 flex-1">
-        <h3 className="text-lg font-bold text-slate-900">{product.name}</h3>
+        <h3 className="text-base md:text-lg font-bold text-slate-900">{product.name}</h3>
 
         <div className="flex items-center gap-2">
-          <span className="text-base font-semibold text-slate-900">
+          <span className="text-sm md:text-base font-semibold text-slate-900">
             {formatNaira(product.price)}
           </span>
           {product.originalPrice && (
-            <span className="text-sm text-gray-400 line-through">
+            <span className=" text-xs md:text-sm text-gray-400 line-through">
               {formatNaira(product.originalPrice)}
             </span>
           )}
@@ -54,8 +54,8 @@ const ProductCard = ({ product, index = 0 }) => {
           className={`mt-3 rounded-full px-6 py-2.5 text-sm font-semibold transition-colors duration-200
             ${
               outOfStock
-                ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                : "bg-slate-900 text-white hover:bg-indigo-600 cursor-pointer"
+                ? "bg-[#6B0000] text-gray-400 cursor-not-allowed"
+                : "bg-[#6B0000] text-white hover:bg-indigo-600 cursor-pointer"
             }`}
         >
           {outOfStock ? "Out of stock" : "Add to Cart"}
