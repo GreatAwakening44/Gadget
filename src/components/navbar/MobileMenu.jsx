@@ -27,12 +27,12 @@ export default function MobileMenu({ isOpen, onClose }) {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/40 z-40 md:hidden"
+        className="fixed inset-0 bg-black/40 z-40 md:hidden pointer-events-none"
         onClick={onClose}
       />
 
       {/* Drawer */}
-      <div className="fixed top-0 right-0 h-full w-72 bg-white z-50 shadow-2xl flex flex-col md:hidden">
+      <div className="fixed top-0 right-0 h-full w-72 bg-white z-[60] shadow-2xl flex flex-col md:hidden">
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <span className="font-bold text-[#6B0000] text-lg">Menu</span>

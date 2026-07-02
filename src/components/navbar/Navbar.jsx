@@ -85,9 +85,9 @@ const Navbar = () => {
 
           {/* ── Mobile: right-side icons ── */}
           <div className="flex md:hidden items-center gap-5 ml-auto">
-            <button aria-label="Search" className="text-gray-600 hover:text-[#6B0000]">
+            
               <MobileSearch />
-            </button>
+            
             <a href="/cart" className="relative text-gray-600 hover:text-[#6B0000]">
               <MdOutlineShoppingCart size={22} />
               <span className="absolute -top-1 -right-1.5 w-4 h-4 bg-[#6B0000] text-white text-[10px] font-bold rounded-full flex items-center justify-center">
