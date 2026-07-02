@@ -8,19 +8,41 @@ const normalize = (str) => str.toLowerCase().replace(/\s+/g, " ").trim();
 const getResults = (query) => {
   if (!query) return [];
   const q = normalize(query);
-
-  // 1. Direct matches — name contains the full query
-  const direct = products.filter((p) =>
-    normalize(p.name).includes(q)
-  );
-  if (direct.length > 0) return direct.slice(0, 6);
-
-  // 2. Fallback — match any word in the query against product names
   const words = q.split(" ").filter(Boolean);
-  const fallback = products.filter((p) =>
-    words.some((word) => normalize(p.name).includes(word))
-  );
-  return fallback.slice(0, 6);
+
+  const scored = products
+    .map((p) => {
+      const name = normalize(p.name);
+      let score = 0;
+
+      // Highest: exact full match
+      if (name === q) score += 100;
+
+      // High: name starts with the query
+      if (name.startsWith(q)) score += 60;
+
+      // High: name contains the full query as a substring
+      if (name.includes(q)) score += 40;
+
+      // Medium: every word in query appears in name
+      const allWordsMatch = words.every((w) => name.includes(w));
+      if (allWordsMatch) score += 30;
+
+      // Lower: at least one word matches
+      const matchedWords = words.filter((w) => name.includes(w));
+      score += matchedWords.length * 10;
+
+      return { product: p, score };
+    })
+    .filter((r) => r.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  // If top results are strong matches, return only those
+  // Otherwise fall back to all partial matches
+  const strong = scored.filter((r) => r.score >= 30);
+  const results = strong.length > 0 ? strong : scored;
+
+  return results.slice(0, 6).map((r) => r.product);
 };
 
 const formatNaira = (amount) => `₦${amount.toLocaleString()}`;
@@ -76,7 +98,7 @@ const SearchBar = () => {
                    rounded-full outline-none focus:border-[#6B0000] focus:bg-white
                    transition-colors placeholder:text-gray-400"
       />
-      
+
 
       {/* Dropdown */}
       {open && query.trim().length > 0 && (

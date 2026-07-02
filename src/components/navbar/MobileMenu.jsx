@@ -42,7 +42,7 @@ export default function MobileMenu({ isOpen, onClose }) {
         </div>
 
         {/* Links */}
-        <nav className="flex-1 overflow-y-auto px-5 py-4 space-y-1">
+        <nav className="flex-1 overflow-y-auto px-5 py-8 space-y-4">
           {/* Top-level links */}
           <a href="#" className="block py-2.5 text-sm font-semibold text-gray-700 hover:text-[#6B0000]">
             Blog
@@ -79,7 +79,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 }
 
 /** Collapsible accordion used inside the mobile drawer */
-function Accordion({ label, isOpen, onToggle, categories }) {
+function Accordion({ label, isOpen, onToggle, categories, onSelect }) {
   return (
     <div>
       <button

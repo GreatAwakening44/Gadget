@@ -13,6 +13,7 @@ import useDropdown from "./Usedropdown";
 import DesktopNav from "../navbar/Desktopnav";
 import SearchBar from "./SearchBar";
 import MobileMenu from "./MobileMenu";
+import MobileSearch from "./MobileSearch";
 
 /**
  * Navbar – the full top navigation bar.
@@ -85,7 +86,7 @@ const Navbar = () => {
           {/* ── Mobile: right-side icons ── */}
           <div className="flex md:hidden items-center gap-5 ml-auto">
             <button aria-label="Search" className="text-gray-600 hover:text-[#6B0000]">
-              <FaSearch size={22} />
+              <MobileSearch />
             </button>
             <a href="/cart" className="relative text-gray-600 hover:text-[#6B0000]">
               <MdOutlineShoppingCart size={22} />
