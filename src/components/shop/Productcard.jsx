@@ -55,7 +55,7 @@ const ProductCard = ({ product, index = 0 }) => {
             ${
               outOfStock
                 ? "bg-[#6B0000] text-gray-400 cursor-not-allowed"
-                : "bg-[#6B0000] text-white hover:bg-indigo-600 cursor-pointer"
+                : "bg-[#6B0000] text-white hover:bg-[#311010] cursor-pointer"
             }`}
         >
           {outOfStock ? "Out of stock" : "Add to Cart"}

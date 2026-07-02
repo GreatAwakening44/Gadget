@@ -2,6 +2,7 @@ import { FaChevronDown } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { laptopCategories, phoneCategories } from "../navbar/Navdata";
 
 /**
@@ -11,8 +12,14 @@ import { laptopCategories, phoneCategories } from "../navbar/Navdata";
  */
 export default function MobileMenu({ isOpen, onClose }) {
   const [expanded, setExpanded] = useState(null); // "laptops" | "phones" | null
+  const navigate = useNavigate()
 
   const toggle = (name) => setExpanded((prev) => (prev === name ? null : name));
+
+  const handleFilter = (filter) => {
+    navigate(`/?filter=${filter}`);
+    onClose();
+  };
 
   if (!isOpen) return null;
 
@@ -54,6 +61,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             isOpen={expanded === "laptops"}
             onToggle={() => toggle("laptops")}
             categories={laptopCategories}
+            onSelect={handleFilter}
           />
 
           {/* iPhones accordion */}
@@ -62,6 +70,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             isOpen={expanded === "phones"}
             onToggle={() => toggle("phones")}
             categories={phoneCategories}
+            onSelect={handleFilter}
           />
         </nav>
       </div>
@@ -90,10 +99,13 @@ function Accordion({ label, isOpen, onToggle, categories }) {
               </p>
               <ul className="space-y-1.5">
                 {col.items.map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-sm text-gray-600 hover:text-[#6B0000]">
-                      {item}
-                    </a>
+                  <li key={item.filter}>
+                    <button
+                      onClick={() => onSelect(item.filter)}
+                      className="text-sm text-gray-600 hover:text-[#6B0000] cursor-pointer bg-transparent border-none p-0 text-left"
+                    >
+                      {item.label}
+                    </button>
                   </li>
                 ))}
               </ul>
